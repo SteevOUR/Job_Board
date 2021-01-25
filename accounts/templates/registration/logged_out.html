@@ -1,0 +1,11 @@
+{% extends "basic-generic.htm" %}
+{% load bootstrap4 %}
+
+{% block page_name %}
+See You Later
+{% endblock page_name %}
+
+{% block content %}
+  <p>Logged out!</p>
+  <a class="boxed-btn3 w-100" href="{% url 'login'%}">Click here to login again.</a>
+{% endblock %}

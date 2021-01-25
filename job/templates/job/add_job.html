@@ -1,0 +1,93 @@
+{% extends 'basic.htm' %}
+{% load bootstrap4 %}
+{% load static %}
+
+{% block body %}
+
+    <!-- bradcam_area  -->
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                        <h3>Add Job</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ bradcam_area  -->
+
+    <div class="job_details_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="apply_job_form white-bg">
+                        <h4>Add Job</h4>
+                        <form method='POST' enctype='multipart/form-data'>
+                            {% csrf_token %}
+                            {% bootstrap_form form %}
+                            {% buttons %}
+                                <button type="submit" class="btn boxed-btn3 w-100">Add</button>
+                            {% endbuttons %}
+                        </form>
+
+                        {% comment %} <form action="#" method='POST' enctype='multipart/form-data'>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="input_field">
+                                        <input type="text" placeholder="Title">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="input_field">
+                                        <textarea name="description" id="" cols="30" rows="10" placeholder="description"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="single_input">
+                                        <select class="wide" >
+                                            <option data-display="Job Type"></option>
+                                            {% for city in all_cities %}
+                                            <option value="{{city}}">{{city.name}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                          <button type="button" id="inputGroupFileAddon03"><i class="fa fa-cloud-upload" aria-hidden="true"></i>
+                                          </button>
+                                        </div>
+                                        <div class="custom-file">
+                                          <input type="file" class="custom-file-input" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03">
+                                          <label class="custom-file-label" for="inputGroupFile03">Upload CV</label>
+                                        </div>
+                                      </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="single_input">
+                                        <select class="wide" >
+                                            <option data-display="Location">Location</option>
+                                            {% for city in all_cities %}
+                                            <option value="{{city}}">{{city.name}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="submit_btn">
+                                        <button class="boxed-btn3 w-100" type="submit">Apply Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form> {% endcomment %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% block script_job_detail %}<script src="{% static 'js/gijgo.min.js' %}"></script> {% endblock script_job_detail %}
+{% endblock body %}

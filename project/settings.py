@@ -80,25 +80,10 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'job_board',
-#         'USER': 'root',
-#         'PASSWORD': '',
-#         'HOST': 'localhost',
-#         'PORT': '3306',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'job_board',
-        'USER': 'postgres',
-        'PASSWORD': 'Steev100',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR + '/' + 'db.sqlite3',
     }
 }
 
@@ -151,7 +136,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'ourahho@gmail.com'
+EMAIL_HOST_USER = 'ourteevahho@gmail.com'
 EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = '587'
 EMAIL_USE_TLS = True

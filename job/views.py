@@ -16,6 +16,7 @@ def job_list(request):
     # Filter
     job_filter = JobFilter(request.GET, queryset=job_list)
     job_list = job_filter.qs
+
     # Pagination
     paginator = Paginator(job_list, 5)
     page_num = request.GET.get('page')

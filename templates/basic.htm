@@ -55,7 +55,7 @@
                                         <ul id="navigation">
                                             <li><a href="/">home</a></li>
                                             <li><a href="{% url 'jobs:job_list' %}">Browse Job</a></li>
-                                            {% if request.user.is_authenticated%}
+                                            {% if request.user.is_authenticated %}
                                                 <li><a href="#">pages <i class="ti-angle-down"></i></a>
                                                     <ul class="submenu">
                                                         <li><a href="candidate.html">Candidates </a></li>
